@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class NotOrderedVector:
+class NotSortedVector:
     def __init__(self, size):
         self.size = size
         self.last_position = -1
@@ -40,7 +40,7 @@ class NotOrderedVector:
         self.last_position -= 1
 
 
-vector_1 = NotOrderedVector(5)
+vector_1 = NotSortedVector(5)
 
 vector_1.print_elements()
 
