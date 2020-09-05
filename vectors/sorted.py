@@ -45,6 +45,15 @@ class SortedVector:
                 return i
         return None
 
+    # [1, 2, 2, 2, 4, 5, 7]
+    def delete(self, value):
+        position = self.linear_search(value)
+        if position is None:
+            return position
+        for i in range(position, self.last_position):
+            self.values[i] = self.values[i + 1]
+        self.last_position -= 1
+
 
 vector_1 = SortedVector(5)
 vector_1.print_elements()
@@ -53,4 +62,6 @@ vector_1.insert(7)
 vector_1.insert(8)
 vector_1.insert(1)
 vector_1.insert(50)
+vector_1.print_elements()
+vector_1.delete(1)
 vector_1.print_elements()
