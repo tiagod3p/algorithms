@@ -84,8 +84,8 @@ $ python name_of_the_file.py # Windows
 The following tools were used in the construction of the project:
 
 #### **STACK**
--   **[Python](https://www.python.org/)
--   **[Numpy](https://numpy.org/)
+-   **[Python](https://www.python.org/)**
+-   **[Numpy](https://numpy.org/)**
 
 ---
 
