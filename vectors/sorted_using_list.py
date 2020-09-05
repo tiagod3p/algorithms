@@ -1,3 +1,6 @@
+from math import ceil
+
+
 def insert(list_of_numbers: list, value: int):
     position = 0
     length = len(list_of_numbers)
@@ -17,8 +20,22 @@ def insert(list_of_numbers: list, value: int):
     return list_of_numbers
 
 
+def binary_search(list_of_numbers: list, value: int):
+    initial = 0
+    last = len(list_of_numbers) - 1
+    while True:
+        current = ceil((initial + last) / 2)
+        if initial > last:
+            return None
+        if list_of_numbers[current] == value:
+            return current
+        if list_of_numbers[current] > value:
+            last = current - 1
+        else:
+            initial = current + 1
+
+
 list_of_numbers = [1, 2, 4, 8, 9, 10, 11, 25, 28]
-print(list_of_numbers)
 
 insert(list_of_numbers, 12)
 insert(list_of_numbers, 15)
