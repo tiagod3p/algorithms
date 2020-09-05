@@ -1,4 +1,5 @@
 import numpy as np
+from math import ceil
 
 
 class SortedVector:
@@ -45,7 +46,23 @@ class SortedVector:
                 return i
         return None
 
-    # [1, 2, 2, 2, 4, 5, 7]
+    # Big O ---> O(logN)
+    def binary_search(self, value):
+        initial_position = 0
+        last_position = self.last_position
+
+        while True:
+            actual_position = ceil((initial_position + last_position) / 2)
+            if initial_position > last_position:
+                return None
+            if self.values[actual_position] == value:
+                return actual_position
+            if self.values[actual_position] > value:
+                last_position = actual_position - 1
+            else:
+                initial_position = actual_position + 1
+
+    # Big O ---> O(N)
     def delete(self, value):
         position = self.linear_search(value)
         if position is None:
@@ -59,9 +76,8 @@ vector_1 = SortedVector(5)
 vector_1.print_elements()
 vector_1.insert(10)
 vector_1.insert(7)
-vector_1.insert(8)
+vector_1.insert(9)
 vector_1.insert(1)
 vector_1.insert(50)
 vector_1.print_elements()
-vector_1.delete(1)
-vector_1.print_elements()
+print(vector_1.binary_search(8))
