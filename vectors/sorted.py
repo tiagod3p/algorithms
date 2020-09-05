@@ -36,6 +36,15 @@ class SortedVector:
         self.values[position] = value
         self.last_position += 1
 
+    # Big O ---> O(N)
+    def linear_search(self, value):
+        for i in range(self.last_position + 1):
+            if self.values[i] > value:
+                return None
+            if self.values[i] == value:
+                return i
+        return None
+
 
 vector_1 = SortedVector(5)
 vector_1.print_elements()
@@ -44,3 +53,4 @@ vector_1.insert(7)
 vector_1.insert(8)
 vector_1.insert(1)
 vector_1.insert(50)
+vector_1.print_elements()
