@@ -33,7 +33,7 @@ class NotSortedVector:
     # Big O ---> O(N)
     def delete(self, value):
         position = self.search(value)
-        if not position:
+        if position is None:
             return position
         for i in range(position, self.last_position):
             self.values[i] = self.values[i + 1]
