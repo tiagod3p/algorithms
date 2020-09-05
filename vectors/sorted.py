@@ -52,15 +52,15 @@ class SortedVector:
         last_position = self.last_position
 
         while True:
-            actual_position = ceil((initial_position + last_position) / 2)
+            current_position = ceil((initial_position + last_position) / 2)
             if initial_position > last_position:
                 return None
-            if self.values[actual_position] == value:
-                return actual_position
-            if self.values[actual_position] > value:
-                last_position = actual_position - 1
+            if self.values[current_position] == value:
+                return current_position
+            if self.values[current_position] > value:
+                last_position = current_position - 1
             else:
-                initial_position = actual_position + 1
+                initial_position = current_position + 1
 
     # Big O ---> O(N)
     def delete(self, value):
